@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="author" content="Script Tutorials" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+	<title>HTML5 Audio player with playlist | Script Tutorials</title>
+	<!-- add styles and scripts -->
+
+	<link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body>
+	<div class="player">
+		<div class="chosePlay">
+			<label>Start</label> <br>
+			<select id="startSurat">
+				<option value="1">Al Fatihah</option>	
+				<option value="2">Al Baqarah</option>	
+			</select>
+			<select id="startAyat">
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5</option>
+				<option value="6">6</option>
+				<option value="7">7</option>
+			</select>
+
+			<br>
+			<label>End</label> <br>
+			<select id="endSurat">
+				<option value="1">Al Fatihah</option>	
+				<option value="2">Al Baqarah</option>	
+			</select>
+			<select id="endAyat">
+				<option value="1">1</option>
+				<option value="2">2</option>
+			</select>
+		</div>
+
+		<br>
+
+		<button id="play">Play</button>
+		<button id="stop" disabled>Stop</button>
+	</div>
+
+	<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+</body>
+</html>
