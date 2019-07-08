@@ -27,14 +27,15 @@ let selectSuratAkhir = document.getElementById('setSuratAkhir');
 let selectAyatAwal = document.getElementById('setAyatAwal');
 let selectAyatAkhir = document.getElementById('setAyatAkhir');
 
+let textCurrentSurat = document.getElementById('currentSurat');
+let textCurrentAyat = document.getElementById('currentAyat');
+
 document.addEventListener('DOMContentLoaded', function()
 {
     var tabElms = document.querySelectorAll('.tabs');
     var tabInstance = M.Tabs.init(tabElms);
 
-    var selectElms = document.querySelectorAll('select');
-    var instances = M.FormSelect.init(selectElms);
-
+    // Generate dropdown surat
     listJuz = [];
     fetch('data/juz.json')
        .then(response => response.json())
@@ -52,6 +53,7 @@ document.addEventListener('DOMContentLoaded', function()
            console.log('Failed')
        })
 
+    // Generate dropdown surat
     listSurat = [];
     fetch('data/surat.json')
        .then(response => response.json())
@@ -75,6 +77,7 @@ document.addEventListener('DOMContentLoaded', function()
            console.log('Failed')
        })
 
+    // Generate dropdown halaman
     for (var i = 1; i <= 604; i++) {
         var option = document.createElement("option");
         option.value = i;
@@ -86,6 +89,7 @@ document.addEventListener('DOMContentLoaded', function()
     var selectHalamanAwalIns = M.FormSelect.init(selectHalamanAwal);
     var selectHalamanAkhirIns = M.FormSelect.init(selectHalamanAkhir);
 
+    // Generate dropdown ayat
     for (var i = 1; i <= 7; i++) {
         var option = document.createElement("option");
         option.value = i;
@@ -111,24 +115,24 @@ btnPlay.onclick = () => {
         initAudio();
 
         state = 'play';
-        btnStop.disabled = false;
-        btnPlay.innerHTML = 'Pause';
+        btnStop.classList.remove('disabled');
+        btnPlay.innerHTML = '<i class="icon-pause"></i>';
     } else if(state == 'play'){ // pause
         song.pause();
         state = 'pause';
-        btnPlay.innerHTML = 'Play';
+        btnPlay.innerHTML = '<i class="icon-play"></i>';
     } else { // play from pause
         song.play();
         state = 'play';
-        btnPlay.innerHTML = 'Pause';
+        btnPlay.innerHTML = '<i class="icon-pause"></i>';
     }
 }
 
 btnStop.onclick = () => {
     ayat = 1;
     state = 'stop';
-    btnStop.disabled = true;
-    btnPlay.innerHTML = 'Play';
+    btnStop.classList.add('disabled');
+    btnPlay.innerHTML = '<i class="icon-play"></i>';
     song.pause();
 }
 
@@ -151,7 +155,15 @@ function initAudio()
         ayat = 1;
         initAudio();
     }
+    updateCurrentCaption();
     song.play();
+}
+
+function updateCurrentCaption()
+{
+    let currentSurat = listSurat[parseInt(surat)-1].name;
+    textCurrentSurat.innerHTML = currentSurat;
+    textCurrentAyat.innerHTML = ayat;
 }
 
 btnShowForm.onclick = () => {
