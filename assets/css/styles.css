@@ -1,5 +1,7 @@
 body {
   overflow: hidden;
+  border-radius: 3px;
+  background: transparent;
 }
 
 .overlay {
@@ -9,6 +11,26 @@ body {
   position: absolute;
   top: 0;
   left: 0;
+  border: 1px solid #444;
+  border-right-color: #aaa;
+  border-top-color: #aaa;
+  border-radius: 3px;
+}
+.titlebar {
+  height: 35px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0,0,0,.4);
+  -webkit-user-select: none;
+  -webkit-app-region: drag;
+  margin: 3px 2px 3px 3px;
+}
+.titlebar h1 {
+    font-size: 16px;
+    margin: 9px 20px;
+    color: white;
 }
 .container {
   width: 100%;
@@ -16,6 +38,11 @@ body {
   position: absolute;
   top: 0;
   left: 0;
+  border: 3px solid rgba(0,0,0,.4);
+  border-left-width: 2px;
+  border-top-width: 2px;
+  margin: 1px;
+  border-radius: 3px;
 }
 
 .btn-floating.btn-xlarge {
