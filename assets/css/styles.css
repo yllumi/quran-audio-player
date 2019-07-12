@@ -1,6 +1,9 @@
+* {
+  -webkit-user-select: none;
+}
 body {
   overflow: hidden;
-  border-radius: 3px;
+  border-radius: 5px;
   background: transparent;
 }
 
@@ -14,7 +17,7 @@ body {
   border: 1px solid #444;
   border-right-color: #aaa;
   border-top-color: #aaa;
-  border-radius: 3px;
+  border-radius: 5px;
 }
 .titlebar {
   height: 35px;
@@ -25,12 +28,12 @@ body {
   background: rgba(0,0,0,.4);
   -webkit-user-select: none;
   -webkit-app-region: drag;
-  margin: 3px 2px 3px 3px;
+  margin: 3px 3px 3px 3px;
 }
 .titlebar h1 {
-    font-size: 16px;
-    margin: 9px 20px;
-    color: white;
+  font-size: 16px;
+  margin: 9px 20px;
+  color: white;
 }
 .container {
   width: 100%;
@@ -38,31 +41,31 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  border: 3px solid rgba(0,0,0,.4);
+  border: 4px solid rgba(0,0,0,.4);
   border-left-width: 2px;
   border-top-width: 2px;
-  margin: 1px;
-  border-radius: 3px;
+  margin: 1px 0px 2px 1px;
+  border-radius: 5px;
 }
 
 .btn-floating.btn-xlarge {
-    width: 75px;
-    height: 75px;
-    font-size: 20px;
+  width: 75px;
+  height: 75px;
+  font-size: 20px;
 }
 .btn-floating.btn-xlarge i {
-    font-size: 2.5rem;
+  font-size: 2.5rem;
 }
 
 #sideform nav.nav-extended .nav-wrapper {
-    min-height: 48px;
-    height: auto;
+  min-height: 48px;
+  height: 48px;
 }
 #sideform {
   position: absolute;
   height: 100%;
-  width: 100%;
-  bottom: 0;
+  width: 99%;
+  bottom: -39px;
   right: 0;
   background-color: white;
   z-index: 100;
@@ -98,8 +101,12 @@ body {
   line-height: 0;
 }
 
+nav {
+  background-color: #26a69a;
+}
+
 @media only screen and (min-width: 601px){
   nav.nav-extended .nav-wrapper {
-      min-height: 48px;
+    min-height: 48px;
   }
 }

@@ -13,6 +13,7 @@ function createWindow () {
     height: 600,
     frame: false,
     transparent: true,
+    backgroundColor: '#00FFFFFF',
     resizable: false,
     maximizable: false,
     fullscreenable: false,
